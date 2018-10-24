@@ -1,1 +1,1 @@
-const alfonso = "giphy"
+// const alfonso = "giphy"   JS for main page
