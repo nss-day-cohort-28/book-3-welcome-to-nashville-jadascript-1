@@ -1,0 +1,1 @@
+// const alfonso = "giphy"   JS for main page
