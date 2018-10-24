@@ -1,0 +1,14 @@
+h1 {
+ text-align: center;
+}
+
+.searchResultTable {
+  border: 1px solid red;
+}
+
+.itinerary {
+  border: 1px solid red;
+} 
+.searchBox {
+  border: 1px solid red;
+}
