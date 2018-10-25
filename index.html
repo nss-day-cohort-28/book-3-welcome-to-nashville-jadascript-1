@@ -24,8 +24,21 @@
         <button class="searchButton">Search Parks</button>
       </div>
       <div class="foodSearch">
-        <input type="text" placeholder="ethnicity">
-        <button class="searchButton">Search Restaurants</button>
+        <fieldset>
+          <label for="food" class="foodDropdown">Food Ethnicity </label>
+          <select type="select" name="food" id="foodOptions">
+            <option value="BBQ" class="foodOptions">BBQ</option>
+            <option value="Burger" class="foodOptions">Burger</option>
+            <option value="Cajun" class="foodOptions">Cajun</option>
+            <option value="Chinese" class="foodOptions">Chinese</option>
+            <option value="Ethiopian" class="foodOptions">Ethiopian</option>
+            <option value="Indian" class="foodOptions">Indian</option>
+            <option value="Italian" class="foodOptions">Italian</option>
+            <option value="Mexican" class="foodOptions">Mexican</option>
+            <option value="Pizza" class="foodOptions">Pizza</option>
+            <option value="Tapas" class="foodOptions">Tapas</option>
+          </select>
+        <button class="searchButton" id = "foodButton">Search Restaurants</button>
       </div>
       <div class="meetupSearch">
         <input type="text" placeholder="topic">
