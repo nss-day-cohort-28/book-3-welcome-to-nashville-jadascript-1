@@ -15,7 +15,7 @@
   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut tenetur iste eos necessitatibus maxime ea
     voluptas deserunt accusantium odio consequuntur fuga commodi aspernatur id minima, laboriosam saepe provident
     facere voluptatum.</p>
-    
+
   <div class="searchCardHolder">
     <!-- div with our search boxes -->
     <div class="searchBox">
@@ -32,7 +32,7 @@
             <option value="baseball_fields=Yes" class="parkOptions">Baseball Fields</option>
             <option value="basketball_courts=Yes" class="parkOptions">Basketball Courts</option>
           </select>
-       
+
       </div>
       <div class="foodSearch">
         <fieldset>
@@ -49,16 +49,20 @@
             <option value="82" class="foodOptions">Pizza</option>
             <option value="179" class="foodOptions">Tapas</option>
           </select>
-        <button class="searchButton" id = "foodButton">Search Restaurants</button>
+          <button class="searchButton" id="foodButton">Search Restaurants</button>
       </div>
-      <div class="meetupSearch">
-        <input type="text" placeholder="topic">
+      <div class="meetupSearch" id="eventos">
+        <select>
+          <option value="" class="">OCTOBER</option>
+          <option value="" class="">NOVEMBER</option>
+          <option value="" class="">DECEMBER</option>
+        </select>
         <button class="searchButton">Search Meetups</button>
       </div>
-      <div class="musicSearch"> 
-          <input class="venueSearchName" type="text" placeholder="topic">
-          <button class="musicEvents">Search Venue Name</button>
-        </div>
+      <div class="musicSearch">
+        <input class="venueSearchName" type="text" placeholder="topic">
+        <button class="musicEvents">Search Venue Name</button>
+      </div>
     </div>
 
     <!-- div where our search results will be populated -->
@@ -82,11 +86,20 @@
   <footer> Copyright 2018 JADAscript</footer>
 
 
-    <!-- JS links -->
-    <script src="scripts/concertsJS/main.js"></script>
-    <script src="scripts/concertsJS/dom.js"></script>
-    <script src="scripts/concertsJS/event.js"></script>
-    <script src="scripts/concertsJS/database.js"></script>
-  </body>
+  <!-- JS links -->
+  <script src="scripts/concertsJS/main.js"></script>
+  <script src="scripts/concertsJS/dom.js"></script>
+  <script src="scripts/concertsJS/event.js"></script>
+  <script src="scripts/concertsJS/database.js"></script>
+  <script src="scripts/meetUps/meetups.js"></script>
+  <script src="scripts/meetUps/dom.js"></script>
+  <script src="scripts/meetUps/event.js"></script>
+  <script src="scripts/meetUps/database.js"></script>
+  <script src="/scripts/parksJS/main.js"></script>
+  <script src="/scripts/parksJS/dom.js"></script>
+  <script src="/scripts/parksJS/event.js"></script>
+  <script src="/scripts/parksJS/database.js"></script>
+  <script src="scripts/food/food.js"></script>
+</body>
 
 </html>
