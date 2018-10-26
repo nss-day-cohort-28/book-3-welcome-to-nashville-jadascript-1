@@ -1,6 +1,6 @@
 // variables
-let resultsDiv = document.querySelector(".searchResultTable")
-let itineraryDiv = document.querySelector(".itinerary")
+// let resultsDiv = document.querySelector(".searchResultTable")
+// let itineraryDiv = document.querySelector(".itinerary")
 let fragment = document.createDocumentFragment()
 
 let foodSection = document.getElementById("foodOptions")
