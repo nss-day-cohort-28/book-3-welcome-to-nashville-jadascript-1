@@ -1,15 +1,18 @@
 
 
-fetch(`https://www.eventbriteapi.com/v3/events/search/?location.longitude=-86.767960&sort_by=date&token=F4AWXXJ4FU34AD7CC42C&location.latitude=36.174465&page=2&expand=venue`)
+let getDate = (splitDate) => {
+ 
+  document.querySelector(".searchResultTable").innerHTML = ""
+   
+fetch(`https://www.eventbriteapi.com/v3/events/search/?sort_by=date&location.latitude=36.174465&location.longitude=-86.767960&start_date.range_start=${splitDate[0]}T00%3A00%3A00Z&start_date.range_end=${splitDate[1]}T00%3A00%3A00Z&token=F4AWXXJ4FU34AD7CC42C&expand=venue`)
   .then((eventBriteData) => eventBriteData.json())
   .then((eventsData) => {
+    console.log(eventsData)
     let meetupslist = document.querySelector(".searchResultTable")
 
     for (let i = 0; i < eventsData.events.length; i++) {
       let currentEvent = eventsData.events[i]
-
-      // //         console.log(currentEvent)
-
+    
 
       let admissionFee = currentEvent.is_free
       //       if (currentEvent.venue.address.city === "Nashville" ){
@@ -35,6 +38,11 @@ fetch(`https://www.eventbriteapi.com/v3/events/search/?location.longitude=-86.76
 
     }
   })
+}
+
+
+
+
 
   
 
