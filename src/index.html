@@ -24,8 +24,21 @@
         <button class="searchButton">Search Parks</button>
       </div>
       <div class="foodSearch">
-        <input type="text" placeholder="ethnicity">
-        <button class="searchButton">Search Restaurants</button>
+        <fieldset>
+          <label for="food" class="foodDropdown">Food Ethnicity </label>
+          <select type="select" name="food" id="foodOptions">
+            <option value="193" class="foodOptions">BBQ</option>
+            <option value="168" class="foodOptions">Burger</option>
+            <option value="491" class="foodOptions">Cajun</option>
+            <option value="25" class="foodOptions">Chinese</option>
+            <option value="149" class="foodOptions">Ethiopian</option>
+            <option value="148" class="foodOptions">Indian</option>
+            <option value="55" class="foodOptions">Italian</option>
+            <option value="73" class="foodOptions">Mexican</option>
+            <option value="82" class="foodOptions">Pizza</option>
+            <option value="179" class="foodOptions">Tapas</option>
+          </select>
+        <button class="searchButton" id = "foodButton">Search Restaurants</button>
       </div>
       <div class="meetupSearch">
         <input type="text" placeholder="topic">
@@ -59,10 +72,11 @@
 
 
   <!-- JS links -->
-  <script src="src/scripts/main.js"></script>
-  <script src="src/scripts/dom.js"></script>
-  <script src="src/scripts/event.js"></script>
-  <script src="src/scripts/database.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/dom.js"></script>
+  <script src="scripts/event.js"></script>
+  <script src="scripts/database.js"></script>
+  <script src="scripts/food/food.js"></script>
 </body>
 
 </html>
