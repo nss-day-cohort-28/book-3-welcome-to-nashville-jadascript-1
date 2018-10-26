@@ -8,14 +8,14 @@ let foodButton = document.getElementById("foodButton")
 
 
 // element creator
-function elementFactory(el, content, ...children) {
-  let element = document.createElement(el);
-  element.innerHTML = content || null
-  children.forEach(child => {
-    element.appendChild(child)
-  })
-  return element
-}
+// function elementFactory(el, content, ...children) {
+//   let element = document.createElement(el);
+//   element.innerHTML = content || null
+//   children.forEach(child => {
+//     element.appendChild(child)
+//   })
+//   return element
+// }
 
 // function to get the value ie the id of my food ethncity of the selection when the button is clicked
 foodButton.addEventListener("click", () => {
