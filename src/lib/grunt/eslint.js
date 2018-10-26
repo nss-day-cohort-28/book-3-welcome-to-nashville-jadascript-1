@@ -1,3 +1,3 @@
 module.exports = {
-  src: ["./scripts/**/*.js", "!node_modules/**/*.js"]
+  src: ["../scripts/**/*.js", "!node_modules/**/*.js"]
 }

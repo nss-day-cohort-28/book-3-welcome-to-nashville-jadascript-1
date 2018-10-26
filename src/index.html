@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+  <title>Welcome to Nashville</title>
+</head>
+
+<body>
+
+  <h1>Welcome to Nashville</h1>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut tenetur iste eos necessitatibus maxime ea
+    voluptas deserunt accusantium odio consequuntur fuga commodi aspernatur id minima, laboriosam saepe provident
+    facere voluptatum.</p>
+
+      <div class="searchCardHolder">
+    <!-- div with our search boxes -->
+    <div class="searchBox">
+      <div class="parkSearch">
+        <input type="text" placeholder="feature">
+        <button class="searchButton">Search Parks</button>
+      </div>
+      <div class="foodSearch">
+        <fieldset>
+          <label for="food" class="foodDropdown">Food Ethnicity </label>
+          <select type="select" name="food" id="foodOptions">
+            <option value="193" class="foodOptions">BBQ</option>
+            <option value="168" class="foodOptions">Burger</option>
+            <option value="491" class="foodOptions">Cajun</option>
+            <option value="25" class="foodOptions">Chinese</option>
+            <option value="149" class="foodOptions">Ethiopian</option>
+            <option value="148" class="foodOptions">Indian</option>
+            <option value="55" class="foodOptions">Italian</option>
+            <option value="73" class="foodOptions">Mexican</option>
+            <option value="82" class="foodOptions">Pizza</option>
+            <option value="179" class="foodOptions">Tapas</option>
+          </select>
+        <button class="searchButton" id = "foodButton">Search Restaurants</button>
+      </div>
+      <div class="meetupSearch" id="eventos">
+          <select>
+            <option value="" class="">OCTOBER</option>
+            <option value="" class="">NOVEMBER</option>
+            <option value="" class="">DECEMBER</option>
+          </select>
+          <button class="searchButton">Search Meetups</button>
+      </div>
+      <div class="musicSearch">
+        <input type="text" placeholder="genre">
+        <button class="searchButton">Search Concerts</button>
+      </div>
+    </div>
+
+    <!-- div where our search results will be populated -->
+    <div class="searchResultTable">
+      <h3>Here are your search results</h3>
+
+    </div>
+
+
+    <!-- div where our saved searches with be stored -->
+    <div class="itinerary">
+      <h3>Here is your itinerary</h3>
+
+    </div>
+
+
+  </div>
+
+
+
+  <footer> Copyright 2018 JADAscript</footer>
+
+
+  <!-- JS links -->
+  <script src="scripts/meetUps/meetups.js"></script> 
+  <script src="scripts/meetUps/dom.js"></script>
+  <script src="scripts/meetUps/event.js"></script>
+  <script src="scripts/meetUps/database.js"></script>
+  <script src="scripts/food/food.js"></script>
+  <!-- <script src="scripts/food/dom.js"></script>
+  <script src="scripts/food/event.js"></script>
+  <script src="scripts/food/database.js"></script> -->
+</body>
+
+</html>
