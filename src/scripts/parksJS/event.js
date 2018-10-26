@@ -19,8 +19,10 @@ function elementFactory(el, content, clazz, ID, ...children) {
   })
   return element
 }
-
-
+// working on event listener for the save/add to itinerary button
+// saveParkButton.addEventListener("click", () => {
+//   let clickedIt = 
+// })
 
 function parkFetch(clickValue) {
  return fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&${clickValue}`)
@@ -31,9 +33,9 @@ function parkFetch(clickValue) {
   .then(parksData => parksData.forEach((park) => {
     console.log(park)
     let parkName = elementFactory("p", `${park.park_name}- Address: ${park.mapped_location_address}. Year Established: ${park.year_established}`)
-    let saveParkButton= elementFactory("button", "save", "saveParkButton", `unique ID=${park.mapped_location_address}`)
+    let saveParkButton= elementFactory("button", "Add To Itinerary", "saveParkButton", `saveParkButton-${park.mapped_location.coordinates[1]}`)
     
-    let searchParkResults= elementFactory("div", null,null, null, parkName, saveParkButton)
+    let searchParkResults= elementFactory("div", null,null, `searchParkResults-${park.mapped_location.coordinates[1]}`, parkName, saveParkButton)
     resultsDiv.appendChild(searchParkResults)
   }))
 }
