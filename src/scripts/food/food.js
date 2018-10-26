@@ -1,23 +1,9 @@
-// variables
-// let resultsDiv = document.querySelector(".searchResultTable")
-// let itineraryDiv = document.querySelector(".itinerary")
-let fragment = document.createDocumentFragment()
+
 
 let foodSection = document.getElementById("foodOptions")
 let foodButton = document.getElementById("foodButton")
 
 
-// element creator
-function elementFactory(el, content, clazz, ID, ...children) {
-  let element = document.createElement(el);
-  element.innerHTML = content || null;
-  element.classList.add(clazz || null)
-  element.setAttribute("id", ID || null)
-  children.forEach(child => {
-    element.appendChild(child)
-  })
-  return element
-}
 
 // function to get the value ie the id of my food ethncity of the selection when the button is clicked
 foodButton.addEventListener("click", () => {
