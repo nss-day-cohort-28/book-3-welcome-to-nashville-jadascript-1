@@ -1,21 +1,9 @@
-// variables
-// let resultsDiv = document.querySelector(".searchResultTable")
-// let itineraryDiv = document.querySelector(".itinerary")
-let fragment = document.createDocumentFragment()
+
 
 let foodSection = document.getElementById("foodOptions")
 let foodButton = document.getElementById("foodButton")
 
 
-// element creator
-// function elementFactory(el, content, ...children) {
-//   let element = document.createElement(el);
-//   element.innerHTML = content || null
-//   children.forEach(child => {
-//     element.appendChild(child)
-//   })
-//   return element
-// }
 
 // function to get the value ie the id of my food ethncity of the selection when the button is clicked
 foodButton.addEventListener("click", () => {
@@ -35,17 +23,37 @@ function foodFetch(clickValue) {
     }
   })
     .then(food => food.json())
+    .then(food => {
+      document.querySelector(".searchResultTable").innerHTML = `<h3>Here are your results</h3>`;
+      return food
+    })
     .then(foodData => {
       foodData.restaurants.forEach((food) => {
         let foodName = elementFactory("p", `${food.restaurant.name}, ${food.restaurant.location.address}. Rating ${food.restaurant.user_rating.aggregate_rating} out of 5.`)
-        let saveButton = elementFactory("button", "Save")
-        let searchResultItem = elementFactory("div", null, foodName, saveButton)
+        let saveButton = elementFactory("button", "Save", "saveButton", `food-button-${food.restaurant.id}`)
+        console.log(food.restaurant.id)
+        let searchResultItem = elementFactory("div", null, null, `food-search-div-${food.restaurant.id}`, foodName, saveButton)
         // itineraryDiv.appendChild(foodName)
         fragment.appendChild(searchResultItem)
         resultsDiv.appendChild(fragment)
       })
     })
 }
+
+// let buttonOfSave =document.querySelectorAll(".saveButton")
+// buttonOfSave.forEach(button => {
+//   button.addEventListener("click", () => {
+
+//   })
+// })
+
+// let myResult = document.getElementsByClassName("result")
+
+// buttonOfSave.addEventListener("click", () => {
+// //  itineraryDiv.appendChild(myResult)
+// console.log("hello")
+// return
+// })
 
 
 
