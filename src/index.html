@@ -22,7 +22,7 @@
       <div class="parkSearch">
         <fieldset>
           <label for="park" class="parkDropdown">Park Features</label>
-          <select type="select" name="park" id="parkOptions" style="width:150px;">
+          <select type="text" id="parkOptions" onchange="parkFetch(event.target.value)">
             <option value="" class="parkOptions" disabled selected>Select your feature</option>
             <option value="playground=Yes" class="parkOptions">Playgrounds</option>
             <option value="picnic_shelters=Yes" class="parkOptions">Picnic Shelters</option>
@@ -32,7 +32,7 @@
             <option value="baseball_fields=Yes" class="parkOptions">Baseball Fields</option>
             <option value="basketball_courts=Yes" class="parkOptions">Basketball Courts</option>
           </select>
-        <button class="parkSearchButton" id="parkButton">Search Parks</button>
+       
       </div>
       <div class="foodSearch">
         <input type="text" placeholder="ethnicity">

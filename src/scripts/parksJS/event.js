@@ -7,18 +7,14 @@ parkButton.addEventListener("click", () => {
 })
 
 function parkFetch(clickValue) {
-  fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&${clickValue}`, {
-  headers: {
-    "Content-Type": "application/json",
-    "user-key": "vx0odMXRoly9l5yCnqWKCJykT"
-  }
-})
-  .then(parks => parks.json())
-  .then(parksData => {
-    parksData.forEach((park) => {
-      let parkName = elementFactory("p", `${park.park_name}- Address: ${park.mapped_location_address}. Year Established: ${park.year_established}`)
-      itineraryDiv.appendChild(parkName)
-    })
-  })
-
+ return fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&${clickValue}`)
+  .then(park => park.json())
+  .then(park =>{
+    document.querySelector(".searchResultTable").innerHTML = null;
+    return park})
+  .then(parksData => parksData.forEach((park) => {
+    console.log(park)
+    let parkName = elementFactory("p", `${park.park_name}- Address: ${park.mapped_location_address}. Year Established: ${park.year_established}`)
+    resultsDiv.appendChild(parkName)
+  }))
 }
