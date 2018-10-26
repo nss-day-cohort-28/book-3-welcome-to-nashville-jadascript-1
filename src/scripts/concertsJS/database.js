@@ -11,13 +11,13 @@ let musicEvents = document.querySelector(".musicEvents")
     //the event listener allows us to click on the button and perform a function
     musicEvents.addEventListener("click", function(){
       let userVenueInput = venueSearchName.value 
-    
-  console.log(userVenueInput)
-      fetch("http://localhost:8088/resultsPage")     //gets data
+     
+      fetch("https://api.songkick.com/api/3.0/metro_areas/11104/calendar.json?apikey=p8YGjn0x2SYsMtkJ&page=1&min_date=2018-10-29&max_date=2018-10-29")     
+      //gets data
       .then(resultsPage => resultsPage.json())      //transforms to json
-      .then(resultsPage =>{
-        document.querySelector(".searchResultTable").innerHTML = null;
-        return resultsPage})
+      .then(resultsPage =>{     //
+        document.querySelector(".searchResultTable").innerHTML = null;   //this sets the search reults back to nothing
+        return resultsPage}) //returns empty box
       .then(resultsData => {                      //parses json
         
         
@@ -40,8 +40,8 @@ let musicEvents = document.querySelector(".musicEvents")
       })
       
     })
-    
   })
+  
 
   
 
