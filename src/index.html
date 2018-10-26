@@ -15,8 +15,8 @@
   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut tenetur iste eos necessitatibus maxime ea
     voluptas deserunt accusantium odio consequuntur fuga commodi aspernatur id minima, laboriosam saepe provident
     facere voluptatum.</p>
-    
-  <div class="searchCardHolder">
+
+      <div class="searchCardHolder">
     <!-- div with our search boxes -->
     <div class="searchBox">
       <div class="parkSearch">
@@ -51,9 +51,13 @@
           </select>
         <button class="searchButton" id = "foodButton">Search Restaurants</button>
       </div>
-      <div class="meetupSearch">
-        <input type="text" placeholder="topic">
-        <button class="searchButton">Search Meetups</button>
+      <div class="meetupSearch" id="eventos">
+          <select>
+            <option value="" class="">OCTOBER</option>
+            <option value="" class="">NOVEMBER</option>
+            <option value="" class="">DECEMBER</option>
+          </select>
+          <button class="searchButton">Search Meetups</button>
       </div>
       <div class="musicSearch">
         <input type="text" placeholder="genre">
@@ -83,6 +87,10 @@
 
 
   <!-- JS links -->
+  <script src="scripts/meetUps/meetups.js"></script> 
+  <script src="scripts/meetUps/dom.js"></script>
+  <script src="scripts/meetUps/event.js"></script>
+  <script src="scripts/meetUps/database.js"></script>
   <script src="/scripts/parksJS/main.js"></script>
   <script src="/scripts/parksJS/dom.js"></script>
   <script src="/scripts/parksJS/event.js"></script>
