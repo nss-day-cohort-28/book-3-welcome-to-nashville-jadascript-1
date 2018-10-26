@@ -1,51 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //uses queryselector to create space for our results to appear
 let itineraryDiv = document.querySelector(".searchResultTable")
 //pointing to our html class music events button
@@ -63,6 +15,9 @@ let musicEvents = document.querySelector(".musicEvents")
   console.log(userVenueInput)
       fetch("http://localhost:8088/resultsPage")     //gets data
       .then(resultsPage => resultsPage.json())      //transforms to json
+      .then(resultsPage =>{
+        document.querySelector(".searchResultTable").innerHTML = null;
+        return resultsPage})
       .then(resultsData => {                      //parses json
         
         
@@ -70,13 +25,16 @@ let musicEvents = document.querySelector(".musicEvents")
       
       resultsData.results.event.forEach((result) => {
         let venueName = elementFactory("p", result.venue.displayName)
+        console.log("venueName",venueName)
         let artistName = elementFactory("p",result.performance[0].displayName)
         console.log(artistName)
-       // let eventTime = elementFactory("p", result.start.time)
-        if(userVenueInput === result.venue.displayName)
-        itineraryDiv.appendChild(venueName)
-        itineraryDiv.appendChild(artistName)
-        // itineraryDiv.appendChild(eventTime)
+        let eventTime = elementFactory("p", result.start.time)
+        if(userVenueInput === result.venue.displayName) {
+          itineraryDiv.appendChild(venueName)
+          itineraryDiv.appendChild(artistName)
+          itineraryDiv.appendChild(eventTime)
+
+        }
         
   
       })
