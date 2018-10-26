@@ -21,16 +21,16 @@
     <div class="searchBox">
       <div class="parkSearch">
         <fieldset>
-          <label for="park" class="parkDropdown">Park Feature</label>
+          <label for="park" class="parkDropdown">Park Features</label>
           <select type="select" name="park" id="featureOptions" style="width:150px;">
-            <option value="0" class="parkOptions">(Select A Feature)</option>
-            <option value="1" class="parkOptions">Playgrounds</option>
-            <option value="2" class="parkOptions">Picnic Shelters</option>
-            <option value="3" class="parkOptions">Walk/Jog Paths</option>
-            <option value="4" class="parkOptions">Hiking Trails</option>
-            <option value="5" class="parkOptions">Dog Park</option>
-            <option value="6" class="parkOptions">Baseball Fields</option>
-            <option value="6" class="parkOptions">Basketball Courts</option>
+            <option value="" class="parkOptions" disabled selected>Select your feature</option>
+            <option value="playground=Yes" class="parkOptions">Playgrounds</option>
+            <option value="picnic_shelters=Yes" class="parkOptions">Picnic Shelters</option>
+            <option value="walk_jog_paths=Yes" class="parkOptions">Walk/Jog Paths</option>
+            <option value="hiking_trails=Yes" class="parkOptions">Hiking Trails</option>
+            <option value="dog_park=Yes" class="parkOptions">Dog Park</option>
+            <option value="baseball_fields=Yes" class="parkOptions">Baseball Fields</option>
+            <option value="basketball_courts=Yes" class="parkOptions">Basketball Courts</option>
           </select>
         <button class="parkSearchButton" id="parkButton">Search Parks</button>
       </div>
