@@ -28,7 +28,7 @@ function parkFetch(clickValue) {
  return fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&${clickValue}`)
   .then(park => park.json())
   .then(park =>{
-    document.querySelector(".searchResultTable").innerHTML = null;
+    document.querySelector(".searchResultTable").innerHTML = `<h3>Here are your results</h3>`;
     return park})
   .then(parksData => parksData.forEach((park) => {
     console.log(park)
