@@ -20,8 +20,19 @@
     <!-- div with our search boxes -->
     <div class="searchBox">
       <div class="parkSearch">
-        <input type="text" placeholder="feature">
-        <button class="searchButton">Search Parks</button>
+        <fieldset>
+          <label for="park" class="parkDropdown">Park Features</label>
+          <select type="text" id="parkOptions" onchange="parkFetch(event.target.value)">
+            <option value="" class="parkOptions" disabled selected>Select your feature</option>
+            <option value="playground=Yes" class="parkOptions">Playgrounds</option>
+            <option value="picnic_shelters=Yes" class="parkOptions">Picnic Shelters</option>
+            <option value="walk_jog_paths=Yes" class="parkOptions">Walk/Jog Paths</option>
+            <option value="hiking_trails=Yes" class="parkOptions">Hiking Trails</option>
+            <option value="dog_park=Yes" class="parkOptions">Dog Park</option>
+            <option value="baseball_fields=Yes" class="parkOptions">Baseball Fields</option>
+            <option value="basketball_courts=Yes" class="parkOptions">Basketball Courts</option>
+          </select>
+       
       </div>
       <div class="foodSearch">
         <fieldset>
@@ -80,10 +91,11 @@
   <script src="scripts/meetUps/dom.js"></script>
   <script src="scripts/meetUps/event.js"></script>
   <script src="scripts/meetUps/database.js"></script>
+  <script src="/scripts/parksJS/main.js"></script>
+  <script src="/scripts/parksJS/dom.js"></script>
+  <script src="/scripts/parksJS/event.js"></script>
+  <script src="/scripts/parksJS/database.js"></script>
   <script src="scripts/food/food.js"></script>
-  <!-- <script src="scripts/food/dom.js"></script>
-  <script src="scripts/food/event.js"></script>
-  <script src="scripts/food/database.js"></script> -->
 </body>
 
 </html>
