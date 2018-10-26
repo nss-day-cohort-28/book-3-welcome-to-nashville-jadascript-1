@@ -1,11 +1,11 @@
 // stores dropdown search value in a variable
-const playgrounds = "playground=Yes"
-const picnicShelters = "picnic_shelters=Yes"
-const walkJogPaths = "walk_jog_paths=Yes"
-const hikingTrails = "hiking_trails=Yes"
-const dogPark = "dog_park=Yes"
-const baseballFields = "baseball_fields=Yes"
-const basketballCourts = "basketball_courts=Yes"
+// const playgrounds = "playground=Yes"
+// const picnicShelters = "picnic_shelters=Yes"
+// const walkJogPaths = "walk_jog_paths=Yes"
+// const hikingTrails = "hiking_trails=Yes"
+// const dogPark = "dog_park=Yes"
+// const baseballFields = "baseball_fields=Yes"
+// const basketballCourts = "basketball_courts=Yes"
 
 let parkSection = document.getElementById("parkOptions")
 
