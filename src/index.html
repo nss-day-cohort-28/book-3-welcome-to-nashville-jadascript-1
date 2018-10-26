@@ -20,17 +20,19 @@
     <!-- div with our search boxes -->
     <div class="searchBox">
       <div class="parkSearch">
-        <select id="featureOptions" style="width:150px;">
-          <option value="0">(Select A Feature)</option>
-          <option value="1">Playgrounds</option>
-          <option value="2">Picnic Shelters</option>
-          <option value="3">Walk/Jog Paths</option>
-          <option value="4">Hiking Trails</option>
-          <option value="5">Dog Park</option>
-          <option value="6">Baseball Fields</option>
-          <option value="6">Basketball Courts</option>
-        </select>
-        <button class="parkSearchButton">Search Parks</button>
+        <fieldset>
+          <label for="park" class="parkDropdown">Park Feature</label>
+          <select type="select" name="park" id="featureOptions" style="width:150px;">
+            <option value="0" class="parkOptions">(Select A Feature)</option>
+            <option value="1" class="parkOptions">Playgrounds</option>
+            <option value="2" class="parkOptions">Picnic Shelters</option>
+            <option value="3" class="parkOptions">Walk/Jog Paths</option>
+            <option value="4" class="parkOptions">Hiking Trails</option>
+            <option value="5" class="parkOptions">Dog Park</option>
+            <option value="6" class="parkOptions">Baseball Fields</option>
+            <option value="6" class="parkOptions">Basketball Courts</option>
+          </select>
+        <button class="parkSearchButton" id="parkButton">Search Parks</button>
       </div>
       <div class="foodSearch">
         <input type="text" placeholder="ethnicity">

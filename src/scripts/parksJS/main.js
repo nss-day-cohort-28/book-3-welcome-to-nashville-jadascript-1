@@ -1,4 +1,14 @@
-let playgrounds = "playground=Yes"
+// stores dropdown search value in a variable
+const playgrounds = "playground=Yes"
+const picnicShelters = "picnic_shelters=Yes"
+const walkJogPaths = "walk_jog_paths=Yes"
+const hikingTrails = "hiking_trails=Yes"
+const dogPark = "dog_park=Yes"
+const baseballFields = "baseball_fields=Yes"
+const basketballCourts = "basketball_courts=Yes"
+
+let parkSection = document.getElementById("parkOptions")
+let parkButton = document.getElementById("parkButton")
 
 fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&playground=Yes")
   .then(parks => parks.json())
@@ -9,7 +19,6 @@ fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRol
     })
   })
 
-let picnicShelters = "picnic_shelters=Yes"
 
 fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&picnic_shelters=Yes")
   .then(parks => parks.json())
@@ -20,7 +29,6 @@ fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRol
     })
   })
 
-let walkJogPaths = "walk_jog_paths=Yes"
 
 fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&walk_jog_paths=Yes")
   .then(parks => parks.json())
@@ -31,7 +39,6 @@ fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRol
     })
   })
 
-let hikingTrails = "hiking_trails=Yes"
 
 fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&hiking_trails=Yes")
   .then(parks => parks.json())
@@ -42,7 +49,6 @@ fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRol
     })
   })
 
-let dogPark = "dog_park=Yes"
 
 fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&dog_park=Yes")
   .then(parks => parks.json())
@@ -53,7 +59,6 @@ fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRol
     })
   })
 
-  let baseballFields = "baseball_fields=Yes"
 
   fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&baseball_fields=Yes")
   .then(parks => parks.json())
@@ -64,7 +69,6 @@ fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRol
     })
   })
 
-  let basketballCourts = "basketball_courts=Yes"
 
   fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&basketball_courts=Yes")
   .then(parks => parks.json())
