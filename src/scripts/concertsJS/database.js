@@ -1,5 +1,5 @@
 //uses queryselector to create space for our results to appear
-let itineraryDiv = document.querySelector(".searchResultTable")
+// let resultsDiv = document.querySelector(".searchResultTable")
 //pointing to our html class music events button
 let musicEvents = document.querySelector(".musicEvents")
 //where we perform the actual search
@@ -16,7 +16,7 @@ musicEvents.addEventListener("click", function () {
     //gets data
     .then(resultsPage => resultsPage.json())      //transforms to json
     .then(resultsPage => {     //
-      document.querySelector(".searchResultTable").innerHTML = null;   //this sets the search reults back to nothing
+      document.querySelector(".searchResultTable").innerHTML = `<h3>Here are your results</h3>`;   //this sets the search reults back to nothing
       return resultsPage
     }) //returns empty box
     .then(resultsData => {                      //parses json
@@ -31,9 +31,9 @@ musicEvents.addEventListener("click", function () {
         console.log(artistName)
         let eventTime = elementFactory("p", result.start.time)
         if (userVenueInput === result.venue.displayName) {
-          itineraryDiv.appendChild(venueName)
-          itineraryDiv.appendChild(artistName)
-          itineraryDiv.appendChild(eventTime)
+          resultsDiv.appendChild(venueName)
+          resultsDiv.appendChild(artistName)
+          resultsDiv.appendChild(eventTime)
 
         }
 
