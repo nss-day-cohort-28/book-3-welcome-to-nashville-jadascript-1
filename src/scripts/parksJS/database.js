@@ -23,9 +23,9 @@
 // Target Elements
 
 // Itinerary
-let itineraryDiv = document.querySelector(".itinerary")
+// let itineraryDiv = document.querySelector(".itinerary")
 // Results Table
-let resultsDiv = document.querySelector(".searchResultTable")
+// let resultsDiv = document.querySelector(".searchResultTable")
 
 
 // Fetch functions that call our DOM function that creates the HTML element
