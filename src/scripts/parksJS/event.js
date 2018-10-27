@@ -1,56 +1,64 @@
-// function to get the value of the search parameter of my park feature when the search button is clicked
-
-// I don't even need this now because I'm using an "onchange" feature in my index dropdown
-
-// parkButton.addEventListener("click", () => {
-// // targets the value in my dropdown options
-//   let clickValue = parkSection.options[parkSection.selectedIndex].value
-//   console.log(clickValue)
-//   parkFetch(clickValue)
-// })
-
-function elementFactory(el, content, clazz, ID, ...children) {
-  let element = document.createElement(el);
-  element.innerHTML = content || null
-  element.classList.add(clazz || null)
-  element.setAttribute("id", ID || null)
-  children.forEach(child => {
-    element.appendChild(child)
+// austins
+// function eventlisten () {
+//   for (let i = 0; i < 6; i++) {
+//   let buttonOfSave = document.querySelectorAll(".saveButton")
+//   buttonOfSave[i].addEventListener("click", () => {
+//     console.log("click", i)
+//   })
+// }
+// }
+// mine
+function eventListener () {
+  let buttonAddItinerary = document.querySelectorAll(".saveParkButton")
+  buttonAddItinerary.forEach((button) => {
+    button.addEventListener("click", () => {
+      console.log("click", button)
+      let selectedPark = button.previousSibling
+      console.log(selectedPark)
+      addParkToItinerary(selectedPark)
+      button.style.visibility = "hidden";
+    })
   })
-  return element
 }
-// working on event listener for the save/add to itinerary button
-// saveParkButton.addEventListener("click", () => {
-//   let clickedIt = 
-// })
 
-function parkFetch(clickValue) {
- return fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&${clickValue}`)
-  .then(park => park.json())
-  .then(park =>{
-    document.querySelector(".searchResultTable").innerHTML = `<h3>Here are your results</h3>`;
-    return park})
-  .then(parksData => parksData.forEach((park) => {
-    console.log(park)
-    let parkName = elementFactory("p", `${park.park_name}- Address: ${park.mapped_location_address}. Year Established: ${park.year_established}`)
-    let saveParkButton= elementFactory("button", "Add To Itinerary", "saveParkButton", `saveParkButton-${park.mapped_location.coordinates[1]}`)
-    
-    let searchParkResults= elementFactory("div", null,null, `searchParkResults-${park.mapped_location.coordinates[1]}`, parkName, saveParkButton)
-    resultsDiv.appendChild(searchParkResults)
-  }))
+// this function should take in our selected Paragraph and appended it to a div with the class parkItinerary in our interary div
+function addParkToItinerary(resultDiv) {
+  let parkItineraryItem = document.querySelector(".parkItinerary");
+  parkItineraryItem.appendChild(resultDiv);
 }
-/* <button onclick="parkFetchItin(event.target.parentNode)">Save</button> */
 
-// function parkFetchItin(clickValue) {
-//   console.log("clickValue", clickValue)
-//   return fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=vx0odMXRoly9l5yCnqWKCJykT&${clickValue}`)
-//    .then(park => park.json())
-//    .then(park =>{
-//      document.querySelector(".searchResultTable").innerHTML = null;
-//      return park})
-//    .then(parksData => parksData.forEach((park) => {
-//      console.log(park)
-//      let parkName = elementFactory("p", `${park.park_name}- Address: ${park.mapped_location_address}. Year Established: ${park.year_established}`)
-//      itineraryDiv.appendChild(parkName)
-//    }))
-//  }
+
+
+
+
+// // function that I hope will loop through all my save buttons in the resultsDiv
+// function itineraryListeners() {
+//   let buttonAddItinerary = document.querySelectorAll(".saveParkButton")
+//   buttonAddItinerary.forEach((button) => {
+//     // then add a click event
+//     button.addEventListener("click", (selectedButton) => {
+//       // this console log isnt working
+//       console.log("clicked") 
+//       // the gets the unique part of the id from each button
+//       let parkId = selectedButton.target.id.substring(15, 23);
+//       // neither is this console log
+//       console.log(selectedButton.target)
+// // it then takes the unique id and puts it in the next function
+//       pullSelectedElement(parkId);
+//     });
+//   });
+// }
+
+// // this function takes the id from the last function
+// function pullSelectedElement(ID) {
+//   // and finds the div with the same unique id
+//   let selectedpark = document.querySelector(`#searchParkResults-${ID}`);
+//   // and puts it in the next function
+//   addToItinerary(selectedpark);
+// };
+
+// // this function should take in our selected Div and appended it to the itinerary Div with the class .itinerary
+// function addToItinerary(resultDiv) {
+//     itineraryDiv.appendChild(resultDiv);
+// }
+// itineraryListeners()
