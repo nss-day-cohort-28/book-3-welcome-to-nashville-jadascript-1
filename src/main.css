@@ -1,5 +1,6 @@
 h1 {
  text-align: center;
+ color: #4040d4
 }
 
 /* our three search table styling */
@@ -57,4 +58,9 @@ footer {
 }
 .visible {
   display: block;
+}
+
+img {
+  width: auto;
+  height: auto;
 }
