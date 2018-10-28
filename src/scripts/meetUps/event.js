@@ -31,8 +31,6 @@ fetch("scripts/meetUps/database.json")
 
       let currentEvent = {
 
-        
-        
         name: boxedElements[3].innerHTML,
         address: boxedElements[9].innerHTML,
         free: boxedElements[13].innerHTML

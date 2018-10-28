@@ -9,19 +9,19 @@ h1 {
   align-items: center;
 }
 .searchResultTable {
-  border: 1px solid red;
+  border: 3px solid darkblue;
   margin: 5px;
   padding: 3px;
 }
 
 .itinerary {
   text-align: center;
-  border: 1px solid red;
+  border: 3px solid darkblue;
   margin: 5px;
   padding: 3px;
 } 
 .searchBox {
-  border: 1px solid red;
+  border: 3px solid darkblue;
   margin: 5px;
   padding: 3px;
 }
@@ -51,4 +51,10 @@ footer {
   margin-right: 3px;
   color: red;
   padding: 5px;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
 }
