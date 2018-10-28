@@ -12,7 +12,7 @@ function parkFetch(clickValue) {
      
      let searchParkResults= elementFactory("div", null,null, `searchParkResults-${park.mapped_location.coordinates[1]}`, parkName, saveParkButton)
      resultsDiv.appendChild(searchParkResults)
-     eventListener();
+     parkEventListener();
    }))
  }
  

@@ -8,7 +8,7 @@
 // }
 // }
 // mine
-function eventListener () {
+function parkEventListener () {
   let buttonAddItinerary = document.querySelectorAll(".saveParkButton")
   buttonAddItinerary.forEach((button) => {
     button.addEventListener("click", () => {
