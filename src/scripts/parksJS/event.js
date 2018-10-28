@@ -1,25 +1,3 @@
-// austins
-// function eventlisten () {
-//   for (let i = 0; i < 6; i++) {
-//   let buttonOfSave = document.querySelectorAll(".saveButton")
-//   buttonOfSave[i].addEventListener("click", () => {
-//     console.log("click", i)
-//   })
-// }
-// }
-// mine
-// function parkEventListener () {
-//   let buttonAddItinerary = document.querySelectorAll(".saveParkButton")
-//   buttonAddItinerary.forEach((button) => {
-//     button.addEventListener("click", () => {
-//       console.log("click", button)
-//       let selectedPark = button.previousSibling
-//       console.log(selectedPark)
-//       addParkToItinerary(selectedPark)
-//       button.style.visibility = "hidden";
-//     })
-//   })
-// }
 
 function parkEventListener() {
   for (let i = 0; i < 6; i++) {
