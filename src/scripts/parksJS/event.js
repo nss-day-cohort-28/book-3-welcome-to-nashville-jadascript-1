@@ -8,17 +8,29 @@
 // }
 // }
 // mine
-function parkEventListener () {
-  let buttonAddItinerary = document.querySelectorAll(".saveParkButton")
-  buttonAddItinerary.forEach((button) => {
-    button.addEventListener("click", () => {
-      console.log("click", button)
-      let selectedPark = button.previousSibling
-      console.log(selectedPark)
+// function parkEventListener () {
+//   let buttonAddItinerary = document.querySelectorAll(".saveParkButton")
+//   buttonAddItinerary.forEach((button) => {
+//     button.addEventListener("click", () => {
+//       console.log("click", button)
+//       let selectedPark = button.previousSibling
+//       console.log(selectedPark)
+//       addParkToItinerary(selectedPark)
+//       button.style.visibility = "hidden";
+//     })
+//   })
+// }
+
+function parkEventListener() {
+  for (let i = 0; i < 6; i++) {
+    let itinerarySaveButton = document.querySelectorAll(".saveParkButton")
+    itinerarySaveButton[i].addEventListener("click", () => {
+      console.log("click", i)
+      let selectedPark = itinerarySaveButton[i].previousSibling
       addParkToItinerary(selectedPark)
-      button.style.visibility = "hidden";
+      itinerarySaveButton[i].style.visibility = "hidden";
     })
-  })
+  }
 }
 
 // this function should take in our selected Paragraph and appended it to a div with the class parkItinerary in our interary div
