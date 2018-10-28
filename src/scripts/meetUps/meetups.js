@@ -1,4 +1,4 @@
-
+let counter = 0
 
 let getDate = (splitDate) => {
  
@@ -10,9 +10,15 @@ fetch(`https://www.eventbriteapi.com/v3/events/search/?sort_by=date&location.lat
     console.log(eventsData)
     let meetupslist = document.querySelector(".searchResultTable")
 
-    for (let i = 0; i < eventsData.events.length; i++) {
+    meetupslist.innerHTML += 
+    `<h3 class="warning">Search Results</h3>`
+
+    for (let i = 0; i < 5; i++) {
       let currentEvent = eventsData.events[i]
+
+      
     
+      let eventAddress = currentEvent.venue.address.localized_multi_line_address_display
 
       let admissionFee = currentEvent.is_free
       //       if (currentEvent.venue.address.city === "Nashville" ){
@@ -26,23 +32,31 @@ fetch(`https://www.eventbriteapi.com/v3/events/search/?sort_by=date&location.lat
       else if (currentEvent.is_free === false) {
         admissionFee = "No"
       }
-      meetupslist.innerHTML += `<h3>Event:</h3>
-              <h2>${currentEvent.name.text}</h2>
-              <h3>Starting Time:</h3>
-              <p>${currentEvent.start.utc}</p>
-              <h3>Ends at:</h3>
-              <p>${currentEvent.end.utc}</p>
-              <h3>Free Admission:</h3>
-              <p>${admissionFee}</p>`
-
-
+      meetupslist.innerHTML += `
+              <div class="boxedEvent" id="boxedEvent_${[i]}">
+              <h3 class="parameter">~ Event ~</h3>
+              <h4 class="parameter">${currentEvent.name.text}</h4> <button class="saveButton">Save to Itinerary</button>
+              <h3 class="parameter">Will be at:</h3>
+              <p class=parameter">${eventAddress}</p>
+              <h3 class="parameter">Free Admission:</h3>
+              <p class="parameter">${admissionFee}</p>
+              </div>
+              `
+    counter++
     }
+    meetupslist.innerHTML += 
+    `<h3 class="warning">Remember to save the event you are looking for</h3>`
+    
+
   })
 }
 
 
 
-
+// {<h3>Starting Time:</h3>
+// {<p>${currentEvent.start.utc}</p>}
+// {<h3>Ends at:</h3>}
+// {<p>${currentEvent.end.utc}</p>}}
 
   
 

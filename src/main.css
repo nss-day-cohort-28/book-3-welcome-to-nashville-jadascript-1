@@ -3,7 +3,7 @@ h1 {
 }
 
 /* our three search table styling */
-.searchCardHolder{
+.searchCardHolder {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +15,7 @@ h1 {
 }
 
 .itinerary {
+  text-align: center;
   border: 3px solid darkblue;
   margin: 5px;
   padding: 3px;
@@ -35,6 +36,22 @@ footer {
   height:40px;  
 }
 
+.boxedEvent {
+  border: 3px solid black;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.warning {
+  border: 2px solid black;
+  background-color: lightyellow;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: red;
+  padding: 5px;
+}
 .hidden {
   display: none;
 }
