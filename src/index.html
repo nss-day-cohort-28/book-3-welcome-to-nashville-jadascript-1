@@ -52,12 +52,13 @@
           <button class="searchButton" id="foodButton">Search Restaurants</button>
       </div>
       <div class="meetupSearch" id="eventos">
-  
+          <fieldset>
               <label for="meet" class="meetUpsDropdown">MeetUps on</label>
           <select id="meetUpDates">
+            <option class="defaulted" disabled>- SELECT DATE -</option>
             <option value="2018-10-01,2018-10-31" class="">OCTOBER</option>
             <option value="2018-11-01,2018-11-30" class="">NOVEMBER</option>
-            <option value="12" class="">DECEMBER</option>
+            <option value="2018-12-01,2018-12-31" class="">DECEMBER</option>
           </select>
           <button class="meetUpsButton">Search Meetups</button>
       </div>
@@ -72,14 +73,14 @@
       <h3>Here are your search results</h3>
 
     </div>
+      <div class="itinerary">
+          <h3>Here is your itinerary</h3>
+      <!-- div where our saved searches will be stored -->
+      <div class="meetUpsItinerary">
+        
 
-
-    <!-- div where our saved searches with be stored -->
-    <div class="itinerary">
-      <h3>Here is your itinerary</h3>
-
+      </div>
     </div>
-
 
   </div>
 
@@ -98,7 +99,7 @@
   <script src="scripts/meetUps/meetups.js"></script>
   <script src="scripts/meetUps/dom.js"></script>
   <script src="scripts/meetUps/event.js"></script>
-  <script src="scripts/meetUps/database.js"></script>
+  <script src="scripts/meetUps/database.json"></script>
   <script src="/scripts/parksJS/main.js"></script>
   <script src="/scripts/parksJS/dom.js"></script>
   <script src="/scripts/parksJS/event.js"></script>
