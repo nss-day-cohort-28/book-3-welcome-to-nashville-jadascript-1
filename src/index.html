@@ -66,8 +66,27 @@
           <button class="meetUpsButton">Search Meetups</button>
       </div>
       <div class="musicSearch">
-        <input class="venueSearchName" type="text" placeholder="topic">
-        <button class="musicEvents">Search Venue Name</button>
+        <fieldset>
+        <label for"" class="">Concerts at</label>
+        <select type="select" name="venue" id="venueName" >
+        <option value="3rd & Lindsley Bar and Grill" class="venueName">3rd & Lindsley Bar and Grill</option>
+        <option value="Ryman Auditorium" class="venueName">Ryman Auditorium</option>
+        <option value="Cannery Ballroom" class="venueName">Cannery Ballroom</option>
+        <option value="Schermerhorn Symphony Center" class="venueName">Schermerhorn Symphony Center</option>
+        <option value="Exit/In" class="venueName">Exit/In</option>
+        <option value="Fond Object" class="venueName">Fond Object</option>
+        <option value="Analog at Hutton Hotel" class="venueName">Analog at Hutton Hotel</option>
+        <option value="Cobra" class="venueName">Cobra</option>
+        <option value="High Watt" class="venueName">High Watt</option>
+        <option value="Marathon Music Works" class="venueName">Marathon Music Works</option>
+        <option value="Dierks Bentley's Whiskey Row - Nashville" class="venueName">Dierks Bentley’s Whiskey Row - Nashville</option>
+        <option value="The Basement East" class="venueName">The Basement East</option>
+        <option value="The Basement" class="venueName">The Basement</option>
+        <option value="Radio Cafe" class="venueName">Radio Cafe</option>
+        <option value="The Cowan" class="venueName">The Cowan</option>
+        <option value="Belcourt Taps" class="venueName">Belcourt Taps</option>
+        </select>
+        <button class="musicEvents">Search Venue</button>
       </div>
     </div>
 
@@ -80,30 +99,24 @@
     <!-- div where our saved searches with be stored -->
     <div class="itinerary">
       <h3>Here is your itinerary</h3>
-      <div id="parkItinerary">
-      </div>
-      <div id="foodItinerary">
-      </div>
+      <div id="parkItinerary"></div>
+      <div id="foodItinerary"></div>
       <div id="meetUpsItinerary"></div>
-      <div id="concertItinerary">
-      </div>
-      <button class="finalButton" type="button" id="finalSave">save</button>
+      <div id="concertItinerary"></div>
+      <button class="finalButton" type="button" id="finalSave">Save</button>
     </div>
 
   </div>
 
 
 
-  <!-- <footer> Copyright 2018 JADAscript</footer> -->
+<!-- <footer> Copyright 2018 JADAscript</footer> -->
 
 
   <!-- JS links -->
   <script src="scripts/function.js"></script>
   <script src="scripts/globalVar.js"></script>
   <script src="scripts/concertsJS/database.js"></script>
-  <script src="scripts/meetUps/meetups.js"></script>
-  <script src="scripts/meetUps/dom.js"></script>
-  <script src="scripts/meetUps/event.js"></script>
   <script src="/scripts/parksJS/main.js"></script>
   <script src="/scripts/parksJS/dom.js"></script>
   <script src="/scripts/parksJS/event.js"></script>
