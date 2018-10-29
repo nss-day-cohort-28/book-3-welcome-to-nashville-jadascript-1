@@ -1,7 +1,12 @@
 h1 {
  text-align: center;
+ color: darkblue;
+ font-family: 'Permanent Marker', cursive;
 }
-
+.openingP {
+  font-size: 1.1 em;
+  font-weight: 300;
+}
 /* our three search table styling */
 .searchCardHolder {
   display: flex;
@@ -11,19 +16,19 @@ h1 {
 .searchResultTable {
   border: 3px solid darkblue;
   margin: 5px;
-  padding: 3px;
+  padding: 10px;
 }
 
 .itinerary {
   text-align: center;
   border: 3px solid darkblue;
   margin: 5px;
-  padding: 3px;
+  padding: 10px;
 } 
 .searchBox {
   border: 3px solid darkblue;
   margin: 5px;
-  padding: 3px;
+  padding: 10px;
 }
 
 
@@ -57,4 +62,17 @@ footer {
 }
 .visible {
   display: block;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  align-content: center;
+}
+
+h3 {
+  text-align: center;
+}
+body {
+  background-color: #86a8e7 
 }

@@ -6,13 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <title>Welcome to Nashville</title>
 </head>
 
 <body>
-
-  <h1>Welcome to Nashville</h1>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut tenetur iste eos necessitatibus maxime ea
+  <header>
+    <h1>Welcome to Nashville</h1>
+    <img src="img/nashville-skyline.png" alt="">
+  </header>
+  <p class="openingP">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut tenetur iste eos necessitatibus maxime ea
     voluptas deserunt accusantium odio consequuntur fuga commodi aspernatur id minima, laboriosam saepe provident
     facere voluptatum.</p>
 
@@ -52,8 +55,8 @@
           <button class="searchButton" id="foodButton">Search Restaurants</button>
       </div>
       <div class="meetupSearch" id="eventos">
-          <fieldset>
-              <label for="meet" class="meetUpsDropdown">MeetUps on</label>
+        <fieldset>
+          <label for="meet" class="meetUpsDropdown">MeetUps on</label>
           <select id="meetUpDates">
             <option class="defaulted" disabled>- SELECT DATE -</option>
             <option value="2018-10-01,2018-10-31" class="">OCTOBER</option>
@@ -92,7 +95,7 @@
       <h3>Here are your search results</h3>
 
     </div>
-  
+
     <!-- div where our saved searches with be stored -->
     <div class="itinerary">
       <h3>Here is your itinerary</h3>
@@ -114,9 +117,6 @@
   <script src="scripts/function.js"></script>
   <script src="scripts/globalVar.js"></script>
   <script src="scripts/concertsJS/database.js"></script>
-  <!-- <script src="scripts/meetUps/meetups.js"></script>
-  <script src="scripts/meetUps/dom.js"></script>
-  <script src="scripts/meetUps/event.js"></script> -->
   <script src="/scripts/parksJS/main.js"></script>
   <script src="/scripts/parksJS/dom.js"></script>
   <script src="/scripts/parksJS/event.js"></script>
