@@ -11,7 +11,7 @@ let musicSearch = document.querySelector(".searchResultTable")
 musicEvents.addEventListener("click", function () {
   let musicSearch = venueName.value
 
-  musicEvents.addEventListener("click", function () {
+  // musicEvents.addEventListener("click", function () {
 
     document.querySelector(".searchResultTable").innerHTML = ""
     let musicEvents = venueName.value
@@ -56,5 +56,5 @@ musicEvents.addEventListener("click", function () {
     })
 })
 
-})
+// })
 
