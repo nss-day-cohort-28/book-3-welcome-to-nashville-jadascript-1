@@ -1,4 +1,4 @@
-
+// Results Save Button
 function parkEventListener() {
   for (let i = 0; i < 6; i++) {
     let itinerarySaveButton = document.querySelectorAll(".saveParkButton")
@@ -11,9 +11,28 @@ function parkEventListener() {
   }
 }
 
-// this function should take in our selected Paragraph and appended it to a div with the class parkItinerary in our interary div
+
+// Itinerary save putton (also stores to local Json)
+function finalItineraryListener(){
+  let finalSaveButton = document.querySelector(".finalButton")
+  finalSaveButton.addEventListener("click", () => {
+    console.log("click")
+    let itineraryObject = {
+      park: document.querySelector("#parkItinerary").innerText,
+      food: document.querySelector("#foodItinerary").innerText,
+      event: document.querySelector("#meetUpsItinerary").innerText,
+      concert: document.querySelector("#concertItinerary").innerText
+    }    
+    saveToItinerary(itineraryObject)
+  })
+}
+finalItineraryListener()
+
+// this function should take in our selected Paragraph and appended it to a div with the class parkItinerary in our itinerary div
 function addParkToItinerary(resultDiv) {
-  let parkItineraryItem = document.querySelector(".parkItinerary");
+  let parkItin = document.querySelector("#parkItinerary")
+  parkItin.innerHTML = null
+  let parkItineraryItem = document.querySelector("#parkItinerary");
   parkItineraryItem.appendChild(resultDiv);
 }
 
