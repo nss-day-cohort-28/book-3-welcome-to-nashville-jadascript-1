@@ -11,7 +11,7 @@ meetUpsButton.addEventListener("click", () => {
 
 })
 
-let itineraryObject
+//let itineraryObject
 
 fetch("scripts/meetUps/database.json")
 .then((data) => data.json())
