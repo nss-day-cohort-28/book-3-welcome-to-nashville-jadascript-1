@@ -35,36 +35,85 @@ function foodFetch(clickValue) {
        eventlisten()
     }) 
 }
+// let itinObject
 
+// fetch("http://localhost:8088/itinerary")
+//   .then((data) => data.json())
+//   .then((itineraryDb) => {
+//     itinObject = itineraryDb
+//   })
 
+// let finalButton = document.querySelectorAll(".finalButton")
 // adds an click event on the save button and targets the info paragraph
 function eventlisten () {
   for (let i = 0; i < 6; i++) {
   let buttonOfSave = document.querySelectorAll(".saveButton")
   buttonOfSave[i].addEventListener("click", () => {
-  console.log("click", i)
   let selectedFood = buttonOfSave[i].previousSibling
-  console.log(selectedFood)
   addToItinerary(selectedFood)
   buttonOfSave[i].style.visibility = "hidden";
   })
- 
+    // addToLocal(itinObject)
 }
 }
 
 // this function should take in our selected Paragraph and appended it to a div with the class foodItinerary in our interary div
 function addToItinerary(resultDiv) {
-  let foodItineraryItem = document.querySelector(".foodItinerary");
-  foodItineraryItem(appendChild)
-  foodItineraryItem.innerHTML = " "
-
+  let foodItineraryItem = document.querySelector("#foodItinerary");
+  // foodItineraryItem.innerHTML = "<button class='finalButton'>Save</button>"
   foodItineraryItem.appendChild(resultDiv);
+
 }
 
-fetch("url", { // Replace "url" with your API's URL
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(legoToSave)
-})
+
+function finalItineraryListen() {
+  let finalSaveButton = document.querySelector(".finalButton")
+  finalSaveButton.addEventListener("click", () => {
+    console.log("click")
+    let itineraryObject = {
+      park: document.querySelector("#parkItinerary").innerText,
+      food: document.querySelector("#foodItinerary").innerText,
+      event: document.querySelector("#meetUpsItinerary").innerText,
+      concert: document.querySelector("#concertItinerary").innerText
+    }
+    saveToItin(itineraryObject)
+  })
+}
+finalItineraryListen()
+
+// addToLocal = (data) => {
+//   console.log(JSON.stringify(data));
+//   let addLocal = new XMLHttpRequest();
+//   addLocal.open("POST", "http://localhost:8088/itinerary", true);
+//   addLocal.setRequestHeader('Content-Type', 'application/json');
+//   addLocal.setRequestHeader('Access-Control-Allow-Origin', '*');
+//   addLocal.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   addLocal.send(JSON.stringify(data));
+// }
+
+
+
+// function addToLocal (data) {
+//   let finalButton =document.querySelectorAll(".finalButton")
+//   finalButton.addEventListener("clcik", () => {
+//   return fetch("http://localhost:8088/itinerary", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(data)
+//   })
+//     .then(contacts => contacts.json())
+//   })
+
+// }
+
+const saveToItin = (data) => {
+  return fetch("http://localhost:8088/itinerary/1", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+}
