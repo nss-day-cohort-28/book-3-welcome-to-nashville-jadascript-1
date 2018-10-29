@@ -6,15 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <title>Welcome to Nashville</title>
 </head>
 
 <body>
-
-  <h1>Welcome to Nashville</h1>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut tenetur iste eos necessitatibus maxime ea
-    voluptas deserunt accusantium odio consequuntur fuga commodi aspernatur id minima, laboriosam saepe provident
-    facere voluptatum.</p>
+  <header>
+    <h1>Welcome to Nashville</h1>
+    <img src="img/nashville-skyline.png" alt="">
+  </header>
+  <p class="openingP">If you are visiting Nashville, you may be have a hard time filtering through all the many activities that are available to you. Let us help you in planning your perfect, fun-filled adventure this weekend. Use the searches below to create a personal itinerary to assist you in planning a unique, all-Nash experience.</p>
 
   <div class="searchCardHolder">
     <!-- div with our search boxes -->
@@ -52,8 +53,8 @@
           <button class="searchButton" id="foodButton">Search Restaurants</button>
       </div>
       <div class="meetupSearch" id="eventos">
-          <fieldset>
-              <label for="meet" class="meetUpsDropdown">MeetUps on</label>
+        <fieldset>
+          <label for="meet" class="meetUpsDropdown">MeetUps on</label>
           <select id="meetUpDates">
             <option class="defaulted" disabled>- SELECT DATE -</option>
             <option value="2018-10-01,2018-10-31" class="">OCTOBER</option>
@@ -63,35 +64,28 @@
           <button class="meetUpsButton">Search Meetups</button>
       </div>
       <div class="musicSearch">
-        <input class="venueSearchName" type="text" placeholder="topic">
-       
-        <div class="musicSearch">
-
-          <label for"" class="">Concerts at</label>
-
-          <select type="select" name="venue" id="venueName" >
-          <option value="3rd&Lindsley" class="venueName">3rd & Lindsley</option>
-          <option value="ryman_auditorium" class="venueName">Ryman Auditorium</option>
-          <option value="canner_ballroom" class="venueName">Cannery Ballroom</option>
-          <option value="schermerhorn_symphony_center" class="venueName">Schermerhorn Symphony Center</option>
-          <option value="exit_in" class="venueName">Exit/In</option>
-          <option value="fond_object" class="venueName">Fond Object</option>
-          <option value="analog_at_hutton_hotel" class="venueName">Analog at Hutton Hotel</option>
-          <option value="cobra" class="venueName">Cobra</option>
-          <option value="high_watt" class="venueName">High Watt</option>
-          <option value="marathon_music_works" class="venueName">Marathon Music Works</option>
-          <option value="dierks_bentleys_whiskey_row" class="venueName">Dierks Bentley’s Whiskey Row - Nashville</option>
-          <option value="the_basement_east" class="venueName">The Basement East</option>
-          <option value="the_basement" class="venueName">The Basement</option>
-          <option value="raio_cafe" class="venueName">Radio Cafe</option>
-          <option value="the_cowan" class="venueName">The Cowan</option>
-          <option value="belcourt_taps" class="venueName">Belcourt Taps</option>
-
-          </select>
-
-          <button class="musicEvents">Search Venue</button>
-        </div>
-
+        <fieldset>
+        <label for"" class="">Concerts at</label>
+        <select type="select" name="venue" id="venueName" >
+        <option value="3rd & Lindsley Bar and Grill" class="venueName">3rd & Lindsley Bar and Grill</option>
+        <option value="Ryman Auditorium" class="venueName">Ryman Auditorium</option>
+        <option value="Cannery Ballroom" class="venueName">Cannery Ballroom</option>
+        <option value="Schermerhorn Symphony Center" class="venueName">Schermerhorn Symphony Center</option>
+        <option value="Exit/In" class="venueName">Exit/In</option>
+        <option value="Fond Object" class="venueName">Fond Object</option>
+        <option value="Analog at Hutton Hotel" class="venueName">Analog at Hutton Hotel</option>
+        <option value="Cobra" class="venueName">Cobra</option>
+        <option value="High Watt" class="venueName">High Watt</option>
+        <option value="Marathon Music Works" class="venueName">Marathon Music Works</option>
+        <option value="Dierks Bentley's Whiskey Row - Nashville" class="venueName">Dierks Bentley’s Whiskey Row - Nashville</option>
+        <option value="The Basement East" class="venueName">The Basement East</option>
+        <option value="The Basement" class="venueName">The Basement</option>
+        <option value="Radio Cafe" class="venueName">Radio Cafe</option>
+        <option value="The Cowan" class="venueName">The Cowan</option>
+        <option value="Belcourt Taps" class="venueName">Belcourt Taps</option>
+        </select>
+        <button class="musicEvents">Search Venue</button>
+      </div>
     </div>
 
     <!-- div where our search results will be populated -->
@@ -99,7 +93,7 @@
       <h3>Here are your search results</h3>
 
     </div>
-  
+
     <!-- div where our saved searches with be stored -->
     <div class="itinerary">
       <h3>Here is your itinerary</h3>
@@ -107,14 +101,14 @@
       <div id="foodItinerary"></div>
       <div id="meetUpsItinerary"></div>
       <div id="concertItinerary"></div>
-      <button class="finalButton" type="button" id="finalSave">save</button>
+      <button class="finalButton" type="button" id="finalSave">Save</button>
     </div>
 
   </div>
 
 
 
-  <footer> Copyright 2018 JADAscript</footer>
+<!-- <footer> Copyright 2018 JADAscript</footer> -->
 
 
   <!-- JS links -->
@@ -126,7 +120,7 @@
   <script src="/scripts/parksJS/main.js"></script>
   <script src="/scripts/parksJS/dom.js"></script>
   <script src="/scripts/parksJS/event.js"></script>
-  <script src="/scripts/parksJS/database.js"></script>
+  <script src="/scripts/parksJS/local.js"></script>
   <script src="scripts/food/food.js"></script>
 </body>
 

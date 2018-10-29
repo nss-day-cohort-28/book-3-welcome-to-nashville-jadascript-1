@@ -1,26 +1,34 @@
 //uses queryselector to create space for our results to appear
-            // let resultsDiv = document.querySelector(".searchResultTable")
 //pointing to our html class music events button
 let musicEvents = document.querySelector(".musicEvents")
 //where we perform the actual search
 //get input 
 let musicSearch = document.querySelector(".searchResultTable")
 
-
-
-
-
 //compare user input against venue name
 //the event listener allows us to click on the button and perform a function
 musicEvents.addEventListener("click", function () {
-  document.querySelector(".searchResultTable").innerHTML = ""
   let musicSearch = venueName.value
 
-// musicEvents.addEventListener("click", function () {
-
-//   document.querySelector(".searchResultTable").innerHTML = ""
-//   let musicEvents = venueName.value
   
+
+    document.querySelector(".searchResultTable").innerHTML = ""
+    let musicEvents = venueName.value
+  function concertEventListener() {
+    let concertSaveButton = document.querySelector(".Save")
+    concertSaveButton.addEventListener("click", () => {
+      let selectedVenue = concertSaveButton.previousSibling
+     addConcertItinerary(selectedVenue)
+    })
+  }
+
+
+  function addConcertItinerary(resultDiv) {
+    let concertItinerary = document.querySelector("#concertItinerary");
+    concertItinerary.appendChild(resultDiv);
+  }
+
+
 
   fetch("https://api.songkick.com/api/3.0/metro_areas/11104/calendar.json?apikey=p8YGjn0x2SYsMtkJ&page=1&min_date=2018-10-29&max_date=2018-10-29") //gets data
     .then(resultsPage => resultsPage.json())      //transforms to json
@@ -34,27 +42,40 @@ musicEvents.addEventListener("click", function () {
       console.log(resultsData.resultsPage.results.event[2])
 
       resultsData.resultsPage.results.event.forEach((result) => {
-
-        // for (i = 0; i < resultsData.resultsPage.results.event.length; i++) {
-        //   if(resultsData.resultsPage.resultsresult.venue.displayName)
-        // // if (musicSearch < 5) {  //added by alfonso
-        // // let venueName = elementFactory("p", result.venue.displayName, "" , newId[i])
-        // // console.log("venueName", venueName)
-        // // let artistName = elementFactory("p", result.performance[0].displayName)
-        // // // console.log(artistName)
-        // // let eventTime = elementFactory("p", result.start.time)
-        // // let buttonSave = elementFactory("button", "Save", "savingButton")
-        // // // if (musicSearch === result.venue.displayName) {
-        // //   resultsDiv.appendChild(venueName)
-        // //   resultsDiv.appendChild(artistName)
-        // //   resultsDiv.appendChild(buttonSave)
-        // //   resultsDiv.appendChild(eventTime)
-
-        // // }
-        // }
-      // }  //added by alfonso
-
+        let venueName = elementFactory("p",`${result.venue.displayName}, ${ result.performance[0].displayName}, ${result.start.time}`)
+        console.log("venueName", venueName)
+        let buttonSave = elementFactory("button", "Save", "Save")
+        if (musicSearch === result.venue.displayName) {
+          resultsDiv.appendChild(venueName)
+          resultsDiv.appendChild(buttonSave)
+        }
       })
-
+      concertEventListener()
+      
     })
 })
+
+const sendToItinerary = (data) => {
+  return fetch("http://localhost:8088/itinerary/1", { 
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+}
+
+function finalItineraryListener2(){
+  let finalSaveButton = document.querySelector(".finalButton")
+  finalSaveButton.addEventListener("click", () => {
+    console.log("click")
+    let itineraryObject = {
+      park: document.querySelector("#parkItinerary").innerText,
+      food: document.querySelector("#foodItinerary").innerText,
+      event: document.querySelector("#meetUpsItinerary").innerText,
+      concert: document.querySelector("#concertItinerary").innerText
+    }    
+    sendToItinerary(itineraryObject)
+  })
+}
+finalItineraryListener2()

@@ -26,53 +26,60 @@ function foodFetch(clickValue) {
     // creates p, buttons and divs for all results and can give unique ids to our fetched data
     .then(foodData => {
       foodData.restaurants.forEach((food) => {
-        let foodName = elementFactory("p", `${food.restaurant.name}, ${food.restaurant.location.address}. Rating ${food.restaurant.user_rating.aggregate_rating} out of 5.`, null, `food-para-${food.restaurant.id}` )
+        let foodName = elementFactory("p", `${food.restaurant.name}, ${food.restaurant.location.address}. Rating ${food.restaurant.user_rating.aggregate_rating} out of 5.`, null, `food-para-${food.restaurant.id}`)
         let saveButton = elementFactory("button", "Save", "saveButton", `food-button-${food.restaurant.id}`)
         let searchResultItem = elementFactory("div", null, null, `food-search-div-${food.restaurant.id}`, foodName, saveButton)
         fragment.appendChild(searchResultItem)
         resultsDiv.appendChild(fragment)
-      }) 
-       eventlisten()
-    }) 
+      })
+      eventlisten()
+    })
 }
-
-// let itineraryObject3
-
-// fetch("scripts/food/database.json")
-// .then((data) => data.json())
-
 
 // adds an click event on the save button and targets the info paragraph
-function eventlisten () {
+function eventlisten() {
   for (let i = 0; i < 6; i++) {
-  let buttonOfSave = document.querySelectorAll(".saveButton")
-  buttonOfSave[i].addEventListener("click", () => {
-  console.log("click", i)
-  let selectedFood = buttonOfSave[i].previousSibling
-  console.log(selectedFood)
-  addToItinerary(selectedFood)
-  buttonOfSave[i].style.visibility = "hidden";
-
-  })
- 
-}
+    let buttonOfSave = document.querySelectorAll(".saveButton")
+    buttonOfSave[i].addEventListener("click", () => {
+      let selectedFood = buttonOfSave[i].previousSibling
+      addToItinerary(selectedFood)
+      buttonOfSave[i].style.visibility = "hidden";
+    })
+  }
 }
 
 
 // this function should take in our selected Paragraph and appended it to a div with the class foodItinerary in our interary div
 function addToItinerary(resultDiv) {
-  let foodItineraryItem = document.querySelector(".foodItinerary");
+  let foodItineraryItem = document.querySelector("#foodItinerary");
+  foodItineraryItem.innerHTML =""
   foodItineraryItem.appendChild(resultDiv);
 }
 
-// addToLocal = (data) => {
-//   console.log(JSON.stringify(data));
-//   let jsonFile = new XMLHttpRequest();
-//   jsonFile.open("POST", "http://localhost:3000/itinerary", true);
-//   jsonFile.setRequestHeader('Content-Type', 'application/json');
-//   jsonFile.setRequestHeader('Access-Control-Allow-Origin', '*');
-//   jsonFile.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-//   jsonFile.send(JSON.stringify(data));
-// }
+// event listener to last save button to create the json object
+function finalItineraryListen() {
+  let finalSaveButton = document.querySelector(".finalButton")
+  finalSaveButton.addEventListener("click", () => {
+    console.log("click")
+    let itineraryObject = {
+      park: document.querySelector("#parkItinerary").innerText,
+      food: document.querySelector("#foodItinerary").innerText,
+      event: document.querySelector("#meetUpsItinerary").innerText,
+      concert: document.querySelector("#concertItinerary").innerText
+    }
+    saveToItin(itineraryObject)
+  })
+}
+finalItineraryListen()
 
 
+// adding our data to the .json object
+const saveToItin = (data) => {
+  return fetch("http://localhost:8088/itinerary/1", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+}

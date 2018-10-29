@@ -73,7 +73,7 @@ console.log("item")
 
 
 
-const saveToItinerary = (data) => {
+let meetUpsEvent = (data) => {
   return fetch("http://localhost:8088/itinerary/1", {
     method: "PUT",
     headers: {
@@ -83,7 +83,7 @@ const saveToItinerary = (data) => {
   })
 }
 
-function finalItineraryListener() {
+function finalItineraryListenerEvent() {
   let finalSaveButton = document.querySelector(".finalButton")
   finalSaveButton.addEventListener("click", () => {
     console.log("click")
@@ -93,11 +93,11 @@ function finalItineraryListener() {
       event: document.querySelector("#meetUpsItinerary").innerText,
       concert: document.querySelector("#concertItinerary").innerText
     }
-    saveToItinerary(itineraryObject)
+    meetUpsEvent(itineraryObject)
   })
 }
 
-finalItineraryListener()
+finalItineraryListenerEvent()
 
 
 
