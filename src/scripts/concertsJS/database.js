@@ -1,5 +1,5 @@
 //uses queryselector to create space for our results to appear
-//let resultsDiv = document.querySelector(".searchResultTable")
+
 //pointing to our html class music events button
 let musicEvents = document.querySelector(".musicEvents")
 //where we perform the actual search
@@ -11,7 +11,7 @@ let musicSearch = document.querySelector(".searchResultTable")
 musicEvents.addEventListener("click", function () {
   let musicSearch = venueName.value
 
-  // musicEvents.addEventListener("click", function () {
+  
 
     document.querySelector(".searchResultTable").innerHTML = ""
     let musicEvents = venueName.value
@@ -25,7 +25,7 @@ musicEvents.addEventListener("click", function () {
 
 
   function addConcertItinerary(resultDiv) {
-    let concertItinerary = document.querySelector(".concertItinerary");
+    let concertItinerary = document.querySelector("#concertItinerary");
     concertItinerary.appendChild(resultDiv);
   }
 
@@ -56,5 +56,27 @@ musicEvents.addEventListener("click", function () {
     })
 })
 
-// })
+const saveToItinerary = (data) => {
+  return fetch("http://localhost:8088/itinerary/1", { 
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+}
 
+function finalItineraryListener(){
+  let finalSaveButton = document.querySelector(".finalButton")
+  finalSaveButton.addEventListener("click", () => {
+    console.log("click")
+    let itineraryObject = {
+      park: document.querySelector("#parkItinerary").innerText,
+      food: document.querySelector("#foodItinerary").innerText,
+      event: document.querySelector("#meetUpsItinerary").innerText,
+      concert: document.querySelector("#concertItinerary").innerText
+    }    
+    saveToItinerary(itineraryObject)
+  })
+}
+finalItineraryListener()
