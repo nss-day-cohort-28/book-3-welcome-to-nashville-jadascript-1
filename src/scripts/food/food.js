@@ -48,6 +48,7 @@ function eventlisten() {
   }
 }
 
+
 // this function should take in our selected Paragraph and appended it to a div with the class foodItinerary in our interary div
 function addToItinerary(resultDiv) {
   let foodItineraryItem = document.querySelector("#foodItinerary");

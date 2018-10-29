@@ -1,5 +1,4 @@
 //uses queryselector to create space for our results to appear
-
 //pointing to our html class music events button
 let musicEvents = document.querySelector(".musicEvents")
 //where we perform the actual search
@@ -40,7 +39,7 @@ musicEvents.addEventListener("click", function () {
     .then(resultsData => {                      //parses json
 
 
-      console.log(resultsData)
+      console.log(resultsData.resultsPage.results.event[2])
 
       resultsData.resultsPage.results.event.forEach((result) => {
         let venueName = elementFactory("p",`${result.venue.displayName}, ${ result.performance[0].displayName}, ${result.start.time}`)
@@ -56,7 +55,7 @@ musicEvents.addEventListener("click", function () {
     })
 })
 
-const saveToItinerary = (data) => {
+const sendToItinerary = (data) => {
   return fetch("http://localhost:8088/itinerary/1", { 
     method: "PUT",
     headers: {
@@ -66,7 +65,7 @@ const saveToItinerary = (data) => {
   })
 }
 
-function finalItineraryListener(){
+function finalItineraryListener2(){
   let finalSaveButton = document.querySelector(".finalButton")
   finalSaveButton.addEventListener("click", () => {
     console.log("click")
@@ -76,7 +75,7 @@ function finalItineraryListener(){
       event: document.querySelector("#meetUpsItinerary").innerText,
       concert: document.querySelector("#concertItinerary").innerText
     }    
-    saveToItinerary(itineraryObject)
+    sendToItinerary(itineraryObject)
   })
 }
-finalItineraryListener()
+finalItineraryListener2()

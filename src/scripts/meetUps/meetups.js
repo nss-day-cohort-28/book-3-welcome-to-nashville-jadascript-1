@@ -7,7 +7,7 @@ let getDate = (splitDate) => {
 fetch(`https://www.eventbriteapi.com/v3/events/search/?sort_by=date&location.latitude=36.174465&location.longitude=-86.767960&start_date.range_start=${splitDate[0]}T00%3A00%3A00Z&start_date.range_end=${splitDate[1]}T00%3A00%3A00Z&token=F4AWXXJ4FU34AD7CC42C&expand=venue`)
   .then((eventBriteData) => eventBriteData.json())
   .then((eventsData) => {
-    console.log(eventsData)
+    // console.log(eventsData)
     let meetupslist = document.querySelector(".searchResultTable")
 
     meetupslist.innerHTML += 
@@ -35,7 +35,7 @@ fetch(`https://www.eventbriteapi.com/v3/events/search/?sort_by=date&location.lat
       meetupslist.innerHTML += `
               <div class="boxedEvent" id="boxedEvent_${[i]}">
               <h3 class="parameter">~ Event ~</h3>
-              <h4 class="parameter">${currentEvent.name.text}</h4> <button class="saveButton">Save to Itinerary</button>
+              <h4 class="parameter">${currentEvent.name.text}</h4> <button class="saveMeetBtn">Save to Itinerary</button>
               <h3 class="parameter">Will be at:</h3>
               <p class=parameter">${eventAddress}</p>
               <h3 class="parameter">Free Admission:</h3>
