@@ -25,6 +25,7 @@ musicEvents.addEventListener("click", function () {
 
   function addConcertItinerary(resultDiv) {
     let concertItinerary = document.querySelector("#concertItinerary");
+    concertItinerary.innerHTML = ""
     concertItinerary.appendChild(resultDiv);
   }
 
