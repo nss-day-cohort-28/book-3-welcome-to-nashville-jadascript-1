@@ -36,6 +36,11 @@ function foodFetch(clickValue) {
     }) 
 }
 
+// let itineraryObject3
+
+// fetch("scripts/food/database.json")
+// .then((data) => data.json())
+
 
 // adds an click event on the save button and targets the info paragraph
 function eventlisten () {
@@ -47,10 +52,12 @@ function eventlisten () {
   console.log(selectedFood)
   addToItinerary(selectedFood)
   buttonOfSave[i].style.visibility = "hidden";
+
   })
  
 }
 }
+
 
 // this function should take in our selected Paragraph and appended it to a div with the class foodItinerary in our interary div
 function addToItinerary(resultDiv) {
@@ -58,7 +65,14 @@ function addToItinerary(resultDiv) {
   foodItineraryItem.appendChild(resultDiv);
 }
 
+// addToLocal = (data) => {
+//   console.log(JSON.stringify(data));
+//   let jsonFile = new XMLHttpRequest();
+//   jsonFile.open("POST", "http://localhost:3000/itinerary", true);
+//   jsonFile.setRequestHeader('Content-Type', 'application/json');
+//   jsonFile.setRequestHeader('Access-Control-Allow-Origin', '*');
+//   jsonFile.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   jsonFile.send(JSON.stringify(data));
+// }
 
-function patchToObject () {
-  
-}
+
